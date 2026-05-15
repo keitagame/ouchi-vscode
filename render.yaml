@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ouchi-coder
+    runtime: node
+    plan: free   # 有料にするなら「starter」や「standard」
+    buildCommand: |
+      sudo apt update && sudo apt install -y build-essential pkg-config libx11-dev libxkbfile-dev libsecret-1-dev python3 git
+      npm install --global yarn
+      yarn
+    startCommand: python app.py
