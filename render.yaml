@@ -7,4 +7,6 @@ services:
       sudo apt update && sudo apt install -y build-essential pkg-config libx11-dev libxkbfile-dev libsecret-1-dev python3 git
       npm install --global yarn
       yarn
-    startCommand: python app.py
+      yarn compile-cli
+      yarn gulp vscode-web-min
+    startCommand: ./scripts/code-server.sh --host 0.0.0.0 --port 8000 --without-connection-token
